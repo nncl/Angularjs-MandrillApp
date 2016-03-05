@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Sending e-mail w/ AngularJS & MandrillApp</title>
+    <style type="text/css">
+        body {
+            padding: 20px;
+        }
+
+        .has-success {
+            color: green;
+        }
+
+        .has-error {
+            color: red;
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ladda-bootstrap/0.9.4/ladda.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ladda-bootstrap/0.9.4/ladda-themeless.min.css" />
+</head>
+<body ng-app="myApp" ng-controller="AppCtrl">
+    <header class="page-header">
+      <h1 class="">Sending E-mails <small>with AngularJS & MandrilApp</small></h1>
+    </header>
+
+    <form
+        ng-submit="sendEmail(emailForm.$valid, modelForm)"
+        name="emailForm"
+        novalidate="novalidate">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Name</label>
+        <input type="text" ng-model="modelForm.name" class="form-control" placeholder="Name" required>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">E-mail address</label>
+        <input type="email" ng-model="modelForm.email" class="form-control" placeholder="E-mail" required>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Message</label>
+        <textarea ng-model="modelForm.message" class="form-control" rows="3" placeholder="Your message goes here" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary ladda-button" data-style="expand-right" ng-hide="success">Submit</button>
+    </form>
+
+    <span class="has-success" ng-show="success">Was success sent</span>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ladda-bootstrap/0.9.4/spin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ladda-bootstrap/0.9.4/ladda.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers/AppCtrl.js"></script>
+    <script src="js/services/AppService.js"></script>
+</body>
+</html>
