@@ -4,7 +4,7 @@ app.service('AppService', function($q, $http, SETTINGS){
             var d = $q.defer();
 
             var data = {
-            'key': SETTINGS.API_KEY,
+            'key': SETTINGS.API_KEY, // It comes from app.js
             'message': {
               'from_email': data.email,
               'from_name': data.name,
@@ -15,8 +15,8 @@ app.service('AppService', function($q, $http, SETTINGS){
               'text': data.message,
               'to': [
                 {
-                  'email': 'ctropiani@yahoo.com',
-                  'name': 'Caue',
+                  'email': '<YOUR-EMAIL-HERE>',
+                  'name': '<CONTACT-NAME-HERE>',
                   'type': 'to'
                 }]
             }
