@@ -11,7 +11,7 @@ app.service('AppService', function($q, $http, SETTINGS){
               'headers': {
                 'Reply-To': data.email
               },
-              'subject': 'Cauê Website - Contato de ' + data.name,
+              'subject': 'Contact: ' + data.name,
               'text': data.message,
               'to': [
                 {
