@@ -1,6 +1,6 @@
 app.controller('AppCtrl', function( $scope, AppService ){
     $scope.emailForm = {};
-    $scope.success = false;
+    $scope.feedback = '';
 
     $scope.sendEmail = function(valid, emailForm){
         var l = Ladda.create(document.querySelector( '.ladda-button' ));
@@ -13,12 +13,14 @@ app.controller('AppCtrl', function( $scope, AppService ){
                     l.stop();
                     console.log('Success');
                     console.log(res);
+                    $scope.feedback = 'Ok response here';
                 },
 
                 function error(err){
                     l.stop();
                     console.log('Error');
                     console.log(err);
+                    $scope.feedback = 'Error: ' + err.name;
                 }
             );
         };
